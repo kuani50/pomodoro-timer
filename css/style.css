@@ -2,9 +2,6 @@ body{
     /* Default font */
     font-family: Rubik;
     color: white;
-
-    background-color: #a10000;
-    
 }
 
 h1{
@@ -42,13 +39,14 @@ main{
 }
 
 .progress-circle{
-    background-color: transparent;
-    border-style: solid;
-    border-color: wheat;
-    border-width: 0.08em;
+    /* background-color: transparent; */
     border-radius: 100%;
     width: 85%;
     height: 85%;   
+    background: 
+    radial-gradient(closest-side, #a10000 94%, transparent 80% 100%),
+    conic-gradient(#22222280 0%,  wheat 0);
+        
     
     display: flex;
     justify-content: center;
@@ -73,10 +71,44 @@ main{
     font-size: 5.2vh;
 }
 
+/* RED THEME */
+
+
+.red-bg{
+    background-color: #a10000;
+}
+
+.progress-circle-red{
+    background: 
+    radial-gradient(closest-side, #a10000 94%, transparent 80% 100%),
+    conic-gradient(#22222280 0%,  wheat 0);
+}
 
 /* https://neumorphism.io/ */
 .neumorphism-red{
     background: #a10000;
-box-shadow:  7px 7px 14px #760000,
-             -7px -7px 14px #cc0000;
+    box-shadow:  7px 7px 14px #760000,
+                -7px -7px 14px #cc0000;
 }
+
+/* GRAY THEME */
+
+.gray-bg{
+    background-color: #434343;
+}
+
+.progress-circle-gray{
+    background: 
+    radial-gradient(closest-side, #434343 94%, transparent 80% 100%),
+    conic-gradient(#22222280 0%,  wheat 0);
+}
+
+.neumorphism-gray{
+    background: #434343;
+    box-shadow:  7px 7px 14px #313131,
+                -7px -7px 14px #555555;
+}
+
+
+
+             
