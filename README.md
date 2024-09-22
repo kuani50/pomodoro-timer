@@ -1,7 +1,7 @@
 # Pomodoro Timer  
 Création d'un site simpliste avec HTML/CSS/JS proposant un chronomètre adapté à la méthode Pomodoro.
 
-~~:globe_with_meridians: Lien vers le site sur GitHub Pages :~~
+:globe_with_meridians: Lien vers le site sur GitHub Pages : https://kuani50.github.io/pomodoro-timer/
 
 ## Description du projet :  
 Projet réalisé dans le cadre d'un cours d'initiation au développement en HTML/CSS et JavaScript vanilla.
