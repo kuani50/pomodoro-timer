@@ -1,0 +1,82 @@
+body{
+    /* Default font */
+    font-family: Rubik;
+    color: white;
+
+    background-color: #a10000;
+    
+}
+
+h1{
+    font-size: 3em;
+}
+
+main{
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+}
+
+.statusbar{
+    margin-bottom: 5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.4em;
+    width: 18vw;
+    height: 9vh;
+    border-radius: 59px;
+    padding-left: 3vh;
+    padding-right: 3vh;
+}
+
+.circle{
+    font-size: 5em;
+    border-radius: 100%;
+    height: 50vh;
+    width: 50vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-circle{
+    background-color: transparent;
+    border-style: solid;
+    border-color: wheat;
+    border-width: 0.08em;
+    border-radius: 100%;
+    width: 85%;
+    height: 85%;   
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.control{
+    margin-top: 4vh;
+}
+
+.control > button{
+    background-color: transparent;
+    border-style: solid;
+    border-radius: 100%;
+    border-color: white;
+    color: white;
+    width: 10vh;
+    height: 10vh;
+    padding-left: 1.5vh;
+    text-align: center;
+    font-size: 5.2vh;
+}
+
+
+/* https://neumorphism.io/ */
+.neumorphism-red{
+    background: #a10000;
+box-shadow:  7px 7px 14px #760000,
+             -7px -7px 14px #cc0000;
+}
