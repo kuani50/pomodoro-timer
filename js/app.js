@@ -1,5 +1,6 @@
 let start = false;
 let isWork = true;
+let idIterval;
 
 const workTime = 25;
 const pauseTime = 5;
@@ -20,11 +21,10 @@ function redTheme(){
     replaceAllClass("neumorphism-gray","neumorphism-red");
 }
 
-function toggleNavBar(){
+function toggleStateBar(){
     const elements = Array.from(document.getElementById("statusbar").children);
     for(const i in elements) {
         const element = elements[i];
-        console.log(element);
         element.classList.toggle('unselected-status');
     }
 }
@@ -69,7 +69,7 @@ function displayTime(minutes, secondes){
 function startChrono(initTime){
     let minutes = initTime;
     let secondes = 0
-    let id = setInterval(() => {
+    idIterval = setInterval(() => {
         secondes--;
         if(secondes < 0){
             secondes=59
@@ -77,7 +77,7 @@ function startChrono(initTime){
         }
 
         if(minutes < 0){
-            clearInterval(id);
+            clearInterval(idIterval);
             switchTime();
             return;
         }
@@ -89,7 +89,7 @@ function startChrono(initTime){
 
 
 function switchTime(){
-    toggleNavBar();
+    toggleStateBar();
     if(isWork){
         isWork=false;
         grayTheme();
@@ -103,8 +103,24 @@ function switchTime(){
 
 
 function startBtn(){
+    const btn = document.getElementById("play-btn");
+    const btnIcon = btn.children[0];
     if(!start){
+        btnIcon.setAttribute("class","fa-solid fa-rotate-right");
         start=true;
         startChrono(workTime);
+    }else{
+        btnIcon.setAttribute("class","fa-solid fa-play")
+        resetPage();
     }
+}
+
+function resetPage(){
+    redTheme();
+    clearInterval(idIterval);
+    displayTime(25,0);
+    updateCurrentProgressBar(0);
+    if(!isWork) toggleStateBar();
+    start = false;
+    isWork = true;
 }
