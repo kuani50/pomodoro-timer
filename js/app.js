@@ -117,7 +117,7 @@ function startChrono(initTime){
 
         updateProgessBar(initTime,minutes,secondes);
         displayTime(minutes,secondes);
-    },10)
+    },1000)
 }
 
 
