@@ -46,12 +46,14 @@ function grayTheme(){
     replaceAllClass("red-bg","gray-bg");
     replaceAllClass("progress-circle-red","progress-circle-gray");
     replaceAllClass("neumorphism-red","neumorphism-gray");
+    replaceAllClass("neumorphism-red-setting","neumorphism-gray-setting");
 }
 
 function redTheme(){
     replaceAllClass("gray-bg","red-bg");
     replaceAllClass("progress-circle-gray","progress-circle-red");
     replaceAllClass("neumorphism-gray","neumorphism-red");
+    replaceAllClass("neumorphism-gray-setting","neumorphism-red-setting");
 }
 
 function toggleStateBar(){

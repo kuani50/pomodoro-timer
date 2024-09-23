@@ -115,9 +115,7 @@ main{
     width: 40vw;
     height: 30vh;
     border-radius: 2em;
-    background: #a10000;
-    box-shadow: inset 18px 18px 36px #970000,
-            inset -18px -18px 36px #ab0000;
+    
 }
 
 form{
@@ -158,6 +156,11 @@ input[type="number"]{
                 -7px -7px 14px #cc0000;
 }
 
+.neumorphism-red-setting{
+    box-shadow: inset 18px 18px 36px #970000,
+            inset -18px -18px 36px #ab0000;
+}
+
 /* GRAY THEME */
 
 .gray-bg{
@@ -173,6 +176,11 @@ input[type="number"]{
 .neumorphism-gray{
     box-shadow:  7px 7px 14px #313131,
                 -7px -7px 14px #555555;
+}
+
+.neumorphism-gray-setting{
+    box-shadow: inset 18px 18px 36px #3f3f3f,
+            inset -18px -18px 36px #474747;
 }
 
 /* Media queries */
