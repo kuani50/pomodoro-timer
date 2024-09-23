@@ -8,6 +8,10 @@ const pauseTime = 5;
 
 document.getElementById("play-btn").addEventListener("click",startBtn);
 
+document.getElementById("popup").addEventListener("click",settingBtn);
+
+document.getElementById("setting").addEventListener("click",settingBtn);
+
 
 function grayTheme(){
     replaceAllClass("red-bg","gray-bg");
@@ -84,7 +88,7 @@ function startChrono(initTime){
 
         updateProgessBar(initTime,minutes,secondes);
         displayTime(minutes,secondes);
-    },1000)
+    },10)
 }
 
 
@@ -113,6 +117,14 @@ function startBtn(){
         btnIcon.setAttribute("class","fa-solid fa-play")
         resetPage();
     }
+}
+
+function settingBtn(){
+    let popup = document.getElementById("popup");
+    if(popup.style.display != "flex")
+        popup.style.display="flex";
+    else
+        popup.style.display="none";
 }
 
 function resetPage(){

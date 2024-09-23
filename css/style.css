@@ -2,6 +2,7 @@ body{
     /* Default font */
     font-family: Rubik;
     color: white;
+    margin: 0;
 }
 
 h1{
@@ -15,18 +16,40 @@ main{
     flex-direction: column;
 }
 
+
 .statusbar{
-    margin-bottom: 5vh;
+    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-size: 1.4em;
     width: 10em;
-    height: 9vh;
+    margin: -1px;
+    /*height: 9vh;*/
     border-radius: 59px;
     padding-left: 3vh;
     padding-right: 3vh;
+    /*min-height: 2.5em;*/
+}
+
+.navbar{
+    background-color: white;
+    margin-bottom: 5vh;
+    display: flex;
+    font-size: 1.4em;
+    width: 20.5em;
+    height: 9vh;
+    border-radius: 59px;
     min-height: 2.5em;
+}
+
+#setting{
+    color: #000000e3;
+    font-size: 1.9em;
+    width: 1.4em;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
 .circle{
@@ -75,6 +98,47 @@ main{
     color: #ffffff50;
 }
 
+
+/* POPUP */
+
+.popup{
+    width: 100%;
+    height: 100%;
+    background-color: #00000025;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup > div{
+    width: 40vw;
+    height: 30vh;
+    border-radius: 2em;
+    background: #a10000;
+    box-shadow: inset 18px 18px 36px #970000,
+            inset -18px -18px 36px #ab0000;
+}
+
+form{
+    font-size: 1.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+input[type="text"]{
+    margin-top: 1.5vh;
+    width: 2.5em;
+    font-size: 1em;
+    border: none;
+    border-radius: 0.25em;
+    margin-left: 0.1em;
+}
+
+
 /* RED THEME */
 
 
@@ -90,7 +154,6 @@ main{
 
 /* https://neumorphism.io/ */
 .neumorphism-red{
-    background: #a10000;
     box-shadow:  7px 7px 14px #760000,
                 -7px -7px 14px #cc0000;
 }
@@ -108,7 +171,6 @@ main{
 }
 
 .neumorphism-gray{
-    background: #434343;
     box-shadow:  7px 7px 14px #313131,
                 -7px -7px 14px #555555;
 }

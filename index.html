@@ -19,9 +19,14 @@
 <body class="red-bg">
     <main>
         <h1>TIMER POMODORO</h1>
-        <div id="statusbar" class="statusbar neumorphism-red">
-            <span>Travail</span>
-            <span class="unselected-status">Pause</span>
+        <div class="navbar neumorphism-red">
+            <div id="statusbar" class="statusbar red-bg">
+                <span>Travail</span>
+                <span class="unselected-status">Pause</span>
+            </div>
+            <div id="setting">
+                <span alt="Lancer le chrono" class="fa-solid fa-gear"></span>
+            </div>
         </div>
         <div class="circle neumorphism-red">
             <div class="progress-circle progress-circle-red">
@@ -32,6 +37,20 @@
             <button id="play-btn">
                 <span alt="Lancer le chrono" class="fa-solid fa-play"></span>
             </button>  
+        </div>
+        <div id="popup" class="popup">
+            <div>
+                <form action="POST">
+                    <div>
+                        <label for="working-time">Temps de travail:</label>
+                        <input id="working-time" type="text" value="25:00" pattern="\d\d:\d\d" maxlength="5">
+                    </div>
+                    <div>
+                        <label for="pause-time">Temps de pause:</label>
+                        <input id="pause-time" type="text" step="" value="05:00" pattern="\d\d:\d\d" maxlength="5">
+                    </div>
+                </form>
+            </div>
         </div>
     </main>
 </body>
