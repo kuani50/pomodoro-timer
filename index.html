@@ -43,11 +43,11 @@
                 <form action="POST">
                     <div>
                         <label for="working-time">Temps de travail:</label>
-                        <input id="working-time" type="text" value="25:00" pattern="\d\d:\d\d" maxlength="5">
+                        <input id="working-time" type="number" value="25" pattern="\d\d" max="60" min="0">
                     </div>
                     <div>
                         <label for="pause-time">Temps de pause:</label>
-                        <input id="pause-time" type="text" step="" value="05:00" pattern="\d\d:\d\d" maxlength="5">
+                        <input id="pause-time" type="number" step="" value="05" pattern="\d\d" max="60" min="0">
                     </div>
                 </form>
             </div>

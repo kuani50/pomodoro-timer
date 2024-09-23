@@ -44,7 +44,7 @@ main{
 }
 
 #setting{
-    color: #000000e3;
+    color: #000000d5;
     font-size: 1.9em;
     width: 1.4em;
     display: flex;
@@ -129,9 +129,9 @@ form{
     height: 100%;
 }
 
-input[type="text"]{
+input[type="number"]{
     margin-top: 1.5vh;
-    width: 2.5em;
+    width: 1.7em;
     font-size: 1em;
     border: none;
     border-radius: 0.25em;

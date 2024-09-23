@@ -2,15 +2,44 @@ let start = false;
 let isWork = true;
 let idIterval;
 
-const workTime = 25;
-const pauseTime = 5;
+
+
+let workTime = localStorage.getItem("working-time");
+if(workTime == undefined) workTime = 25;
+
+let pauseTime = localStorage.getItem("pause-time");
+if(pauseTime == undefined) pauseTime = 5;
+
+
+
+displayTime(workTime,0);
 
 
 document.getElementById("play-btn").addEventListener("click",startBtn);
 
-document.getElementById("popup").addEventListener("click",settingBtn);
-
 document.getElementById("setting").addEventListener("click",settingBtn);
+
+document.getElementById("popup").addEventListener("click",(event) => {
+    if(event.target.id === "popup") settingBtn()
+});
+
+document.getElementById("working-time").addEventListener("change",(event) => {
+    workTime = event.target.value;
+    localStorage.setItem("working-time",workTime);
+    if(isWork){
+        displayTime(workTime,0)
+    }
+});
+document.getElementById("working-time").value=workTime;
+
+document.getElementById("pause-time").addEventListener("change",(event) => {
+    pauseTime = event.target.value;
+    localStorage.setItem("pause-time",pauseTime);
+    if(!isWork){
+        displayTime(pauseTime,0)
+    }
+})
+document.getElementById("pause-time").value=pauseTime;
 
 
 function grayTheme(){
@@ -130,7 +159,7 @@ function settingBtn(){
 function resetPage(){
     redTheme();
     clearInterval(idIterval);
-    displayTime(25,0);
+    displayTime(workTime,0);
     updateCurrentProgressBar(0);
     if(!isWork) toggleStateBar();
     start = false;
