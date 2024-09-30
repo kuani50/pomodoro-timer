@@ -17,7 +17,7 @@ Aucune installation particulière n'est requise. Il suffit d'ouvrir le fichier [
 ## Tâches à réaliser :  
 - [x] Bouton pour lancer le chronomètre.  
 - [x] Bouton pour réinitialiser l’application.  
-- [ ] Site responsive.  
+- [x] Site responsive.  
 - [x] Bascule automatique entre le temps de travail et de pause.  
 - [x] Changement visuel entre chaque période (travail/pause).  
 - [x]  Formulaire pour choisir la durée de chaque période.  

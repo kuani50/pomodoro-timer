@@ -24,6 +24,8 @@ document.getElementById("popup").addEventListener("click",(event) => {
 });
 
 document.getElementById("working-time").addEventListener("change",(event) => {
+    if(event.target.value > 120 ) event.target.value = 120;
+    if(event.target.value <= 0 ) event.target.value = 1;
     workTime = event.target.value;
     localStorage.setItem("working-time",workTime);
     if(isWork){
@@ -33,6 +35,8 @@ document.getElementById("working-time").addEventListener("change",(event) => {
 document.getElementById("working-time").value=workTime;
 
 document.getElementById("pause-time").addEventListener("change",(event) => {
+    if(event.target.value <= 0 ) event.target.value = 1;
+    if(event.target.value > 120 ) event.target.value = 120;
     pauseTime = event.target.value;
     localStorage.setItem("pause-time",pauseTime);
     if(!isWork){
@@ -47,6 +51,7 @@ function grayTheme(){
     replaceAllClass("progress-circle-red","progress-circle-gray");
     replaceAllClass("neumorphism-red","neumorphism-gray");
     replaceAllClass("neumorphism-red-setting","neumorphism-gray-setting");
+    updateCurrentProgressBar(0)
 }
 
 function redTheme(){
@@ -54,6 +59,7 @@ function redTheme(){
     replaceAllClass("progress-circle-gray","progress-circle-red");
     replaceAllClass("neumorphism-gray","neumorphism-red");
     replaceAllClass("neumorphism-gray-setting","neumorphism-red-setting");
+    updateCurrentProgressBar(0)
 }
 
 function toggleStateBar(){
@@ -119,7 +125,7 @@ function startChrono(initTime){
 
         updateProgessBar(initTime,minutes,secondes);
         displayTime(minutes,secondes);
-    },100)
+    },1000)
 }
 
 

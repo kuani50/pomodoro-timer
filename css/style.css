@@ -219,5 +219,9 @@ input[type="number"]{
         font-size: 300%;
         
     }
+
+    .popup{
+        font-size: 0.57em;
+    }
 }
 
