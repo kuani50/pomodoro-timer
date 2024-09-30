@@ -15,13 +15,13 @@ Aucune installation particulière n'est requise. Il suffit d'ouvrir le fichier [
 ---
 
 ## Tâches à réaliser :  
-- [ ] Bouton pour lancer le chronomètre.  
-- [ ] Bouton pour réinitialiser l’application.  
+- [x] Bouton pour lancer le chronomètre.  
+- [x] Bouton pour réinitialiser l’application.  
 - [ ] Site responsive.  
-- [ ] Bascule automatique entre le temps de travail et de pause.  
-- [ ] Changement visuel entre chaque période (travail/pause).  
-- [ ] Formulaire pour choisir la durée de chaque période.  
-- [ ] Enregistrement des paramètres définis dans le local storage.
+- [x] Bascule automatique entre le temps de travail et de pause.  
+- [x] Changement visuel entre chaque période (travail/pause).  
+- [x]  Formulaire pour choisir la durée de chaque période.  
+- [x] Enregistrement des paramètres définis dans le local storage.
 
 ---
 
