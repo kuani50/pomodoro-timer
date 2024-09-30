@@ -123,7 +123,7 @@ main{
 }
 
 #close-setting > span {
-    pointer-events: auto;
+    pointer-events: all;
     margin: 0.5em;
     font-size: 1.8em;
 }
@@ -211,7 +211,7 @@ input[type="number"]{
 
     .navbar{
         margin-bottom: 5vh;
-        font-size: 5wm;
+        font-size: 5vw;
         width: 80%;
         height: 9vh;
         min-height: 2.5em;
