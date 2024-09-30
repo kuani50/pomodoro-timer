@@ -4,15 +4,15 @@ let idIterval;
 
 
 
-let workTime = localStorage.getItem("working-time");
-if(workTime == undefined) workTime = 25;
+let workTime = [localStorage.getItem("working-time")];
+if(workTime[0] == undefined) workTime[0] = 25;
 
-let pauseTime = localStorage.getItem("pause-time");
-if(pauseTime == undefined) pauseTime = 5;
+let pauseTime = [localStorage.getItem("pause-time")];
+if(pauseTime[0] == undefined) pauseTime[0] = 5;
 
 
 
-displayTime(workTime,0);
+displayTime(workTime[0],0);
 
 
 document.getElementById("play-btn").addEventListener("click",startBtn);
@@ -23,28 +23,28 @@ document.getElementById("popup").addEventListener("click",(event) => {
     if(event.target.id === "popup") settingBtn()
 });
 
+document.getElementById("close-btn").addEventListener("click",() => settingBtn());
+
 document.getElementById("working-time").addEventListener("change",(event) => {
-    if(event.target.value > 120 ) event.target.value = 120;
-    if(event.target.value <= 0 ) event.target.value = 1;
-    workTime = event.target.value;
-    localStorage.setItem("working-time",workTime);
-    if(isWork){
-        displayTime(workTime,0)
-    }
+        editTime(event.target,workTime);
 });
-document.getElementById("working-time").value=workTime;
+document.getElementById("working-time").value=workTime[0];
 
 document.getElementById("pause-time").addEventListener("change",(event) => {
-    if(event.target.value <= 0 ) event.target.value = 1;
-    if(event.target.value > 120 ) event.target.value = 120;
-    pauseTime = event.target.value;
-    localStorage.setItem("pause-time",pauseTime);
-    if(!isWork){
-        displayTime(pauseTime,0)
-    }
+    editTime(event.target,pauseTime);
 })
-document.getElementById("pause-time").value=pauseTime;
+document.getElementById("pause-time").value=pauseTime[0];
 
+function editTime(element,time,label){
+    if(element.value <= 0 ) element.value = 1;
+    if(element.value > 120 ) element.value = 120;
+    time[0] = element.value;
+    localStorage.setItem(element.id,time[0]);
+    if(!isWork){
+        displayTime(time[0],0)
+    }
+    resetPage();
+}
 
 function grayTheme(){
     replaceAllClass("red-bg","gray-bg");
@@ -134,11 +134,11 @@ function switchTime(){
     if(isWork){
         isWork=false;
         grayTheme();
-        startChrono(pauseTime);
+        startChrono(pauseTime[0]);
     }else{
         isWork=true;
         redTheme();
-        startChrono(workTime);
+        startChrono(workTime[0]);
     }
 }
 
@@ -149,9 +149,8 @@ function startBtn(){
     if(!start){
         btnIcon.setAttribute("class","fa-solid fa-rotate-right");
         start=true;
-        startChrono(workTime);
+        startChrono(workTime[0]);
     }else{
-        btnIcon.setAttribute("class","fa-solid fa-play")
         resetPage();
     }
 }
@@ -167,9 +166,14 @@ function settingBtn(){
 function resetPage(){
     redTheme();
     clearInterval(idIterval);
-    displayTime(workTime,0);
+    displayTime(workTime[0],0);
     updateCurrentProgressBar(0);
     if(!isWork) toggleStateBar();
     start = false;
     isWork = true;
+    
+    const btn = document.getElementById("play-btn");
+    const btnIcon = btn.children[0];
+    
+    btnIcon.setAttribute("class","fa-solid fa-play")
 }

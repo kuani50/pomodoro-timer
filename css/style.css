@@ -111,6 +111,24 @@ main{
     align-items: center;
 }
 
+
+#close-setting{
+    display: flex;
+    flex-direction: row-reverse;
+    pointer-events: none; 
+    width: 40vw;
+    height: 30vh;
+    grid-column: 2;
+    position: absolute;
+}
+
+#close-setting > span {
+    pointer-events: auto;
+    margin: 0.5em;
+    font-size: 1.8em;
+}
+
+
 .popup > div{
     width: 40vw;
     height: 30vh;
